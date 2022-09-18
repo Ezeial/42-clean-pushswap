@@ -1,0 +1,7 @@
+[ ] Verifiez que "-" ou "+" donne bel et bien 0
+[x] Virez les printfs et adapter le message d'erreur
+[ ] relink de la libft
+[x] clean les shit printf du radix
+[ ] faire les petite stack
+[ ] virer les fnc debug du main
+[ ] push sur github
