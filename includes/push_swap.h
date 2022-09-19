@@ -15,6 +15,7 @@ typedef struct s_stacks {
 
 int		ft_iswhitespace(char c);
 t_list	*ft_lstmap_to_sorted_idx(t_list *lst);
+int		ft_lstis_sorted(t_list *lst);
 
 int		ft_init_stacks(t_stacks *stacks);
 
@@ -23,6 +24,9 @@ void	ft_destroy_stacks(t_stacks *stacks);
 int		ft_parse_int(char **str, int *parsed_int);
 int		ft_parse_args(int ac, char **av, t_stacks *stacks);
 
+void	ft_sort_two(t_stacks *stacks);
+void	ft_sort_three(t_stacks *stacks);
+void	ft_sort_five(t_stacks *stacks);
 void	ft_radix(t_stacks *stacks);
 void	ft_sort(t_stacks *stacks);
 

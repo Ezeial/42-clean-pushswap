@@ -32,6 +32,7 @@ int main(int ac, char **av)
 		return (1);
 	}
 	ft_sort(&stacks);
+	ft_print_stacks(&stacks);
 	ft_destroy_stacks(&stacks);
 	return (0);
 }
