@@ -27,12 +27,11 @@ int main(int ac, char **av)
 		return (1);
 	if (ft_parse_args(ac, av, &stacks) < 0)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		ft_destroy_stacks(&stacks);
 		return (1);
 	}
 	ft_sort(&stacks);
-	ft_print_stacks(&stacks);
 	ft_destroy_stacks(&stacks);
 	return (0);
 }

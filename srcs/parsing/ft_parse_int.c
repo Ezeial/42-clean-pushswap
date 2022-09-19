@@ -22,6 +22,8 @@ int	ft_parse_int(char **str, int *parsed_int)
 		if (**str == '-')
 			sign = -1;
 		(*str)++;
+		if (!ft_isdigit(**str))
+			return (-1);
 	}
 	current_value = 0;
 	while (**str && !ft_iswhitespace(**str))
