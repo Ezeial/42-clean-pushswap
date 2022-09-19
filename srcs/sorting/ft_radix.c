@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_radix.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:19:49 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:19:57 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static size_t	ft_get_max_bits(t_stacks *stacks)
@@ -25,13 +37,13 @@ void	ft_radix(t_stacks *stacks)
 		stack_idx = 0;
 		while (stack_idx < stacks->elem_count)
 		{
-			if (((*((int *)stacks->A->top->data) >> bit_idx) & 1) == 1)
+			if (((*((int *)stacks->a->top->data) >> bit_idx) & 1) == 1)
 				ft_ra(stacks);
 			else
 				ft_pb(stacks);
 			stack_idx++;
 		}
-		while (ft_lstsize(stacks->B) > 0)
+		while (ft_lstsize(stacks->b) > 0)
 			ft_pa(stacks);
 		bit_idx++;
 	}

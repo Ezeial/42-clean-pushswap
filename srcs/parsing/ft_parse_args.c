@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parse_args.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:17:45 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:19:23 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	ft_is_value_in_stack(t_list	*stack, int value)
 {
-	t_list_elem *current;
+	t_list_elem	*current;
 
 	if (stack)
 	{
@@ -19,7 +31,7 @@ static int	ft_is_value_in_stack(t_list	*stack, int value)
 
 static int	ft_push_int_to_stack(t_list *stack, int value)
 {
-	t_list_elem *new_elem;
+	t_list_elem	*new_elem;
 	int			*new_value;
 
 	if (ft_is_value_in_stack(stack, value))
@@ -59,36 +71,25 @@ static int	ft_parse_str(char *str, t_list *stack)
 	return (0);
 }
 
-/*
-**	Parse the arguments and validate the user input
-**	Fill the A stack with integers parsed and mapped to their index in a sorted order
-**	Return:
-**		-4	-> error: allocation error
-**		-3	-> error: duplicate number 
-**		-2	-> error: outside of integer bounds
-**		-1	-> error: not an integer
-**		 0	-> success
-*/
-
 int	ft_parse_args(int ac, char **av, t_stacks *stacks)
 {
 	t_list	*mapped_lst;
 	size_t	idx;
 	int		ret;
-	
+
 	idx = 1;
 	while (idx < (size_t)ac)
 	{
-		ret = ft_parse_str(av[idx], stacks->A);
+		ret = ft_parse_str(av[idx], stacks->a);
 		if (ret < 0)
 			return (ret);
 		idx++;
 	}
-	mapped_lst = ft_lstmap_to_sorted_idx(stacks->A);
+	mapped_lst = ft_lstmap_to_sorted_idx(stacks->a);
 	if (!mapped_lst)
 		return (-4);
-	ft_lstclear(stacks->A, free);
-	stacks->A = mapped_lst;
-	stacks->elem_count = ft_lstsize(stacks->A);
+	ft_lstclear(stacks->a, free);
+	stacks->a = mapped_lst;
+	stacks->elem_count = ft_lstsize(stacks->a);
 	return (0);
 }

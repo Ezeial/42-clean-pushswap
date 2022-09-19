@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:05:11 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:08:53 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -8,8 +20,8 @@
 # define INT_MIN -2147483648
 
 typedef struct s_stacks {
-	t_list *A;
-	t_list *B;
+	t_list	*a;
+	t_list	*b;
 	size_t	elem_count;
 }	t_stacks;
 

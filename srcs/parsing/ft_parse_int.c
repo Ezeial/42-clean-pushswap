@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parse_int.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:19:29 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:19:43 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int	ft_will_exceed(unsigned long current_value, int sign, int next_digit)
+static int	ft_will_exceed(unsigned long current_value,
+	int sign, int next_digit)
 {
 	if (current_value > INT_MAX / 10)
 		return (-1);

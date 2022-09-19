@@ -1,25 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:23:08 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:23:31 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void ft_print_el(size_t index, void *value, void *arg)
+int	main(int ac, char **av)
 {
-	(void)index;
-	(void)arg;
-	printf("%d | ", *((int *)value));
-}
-
-void ft_print_stacks(t_stacks *stacks)
-{
-	printf("\nElem count: %ld\n[A]: ", stacks->elem_count);
-	ft_lstiter(stacks->A, ft_print_el, NULL);
-	printf("\n");
-	printf("[B]: ");
-	ft_lstiter(stacks->B, ft_print_el, NULL);
-	printf("\n");
-}
-
-int main(int ac, char **av)
-{
-	t_stacks stacks;
+	t_stacks	stacks;
 
 	if (ac < 2)
 		return (0);

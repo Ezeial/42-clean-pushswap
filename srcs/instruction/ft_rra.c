@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rra.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:16:23 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:16:29 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_rra(t_stacks *stacks)
 {
-	ft_lstshift_down(stacks->A);
+	ft_lstshift_down(stacks->a);
 	write(1, "rra\n", 4);
 }

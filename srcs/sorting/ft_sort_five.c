@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_five.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:20:02 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:47:00 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	ft_lstget_min(t_list *lst)
 {
 	t_list_elem	*current;
-	int 		ret;
+	int			ret;
 
 	current = lst->top;
 	if (!current)
@@ -38,15 +50,15 @@ static int	ft_lstget_pos(t_list *lst, int to_find)
 static void	ft_setmin_topa(t_stacks *stacks)
 {
 	int	min;
-	int minpos;
+	int	minpos;
 
-	min = ft_lstget_min(stacks->A);
-	minpos = ft_lstget_pos(stacks->A, min);
+	min = ft_lstget_min(stacks->a);
+	minpos = ft_lstget_pos(stacks->a, min);
 	if ((size_t)minpos < stacks->elem_count / 2)
-		while (*((int *)stacks->A->top->data) != min)
+		while (*((int *)stacks->a->top->data) != min)
 			ft_ra(stacks);
 	else
-		while (*((int *)stacks->A->top->data) != min)
+		while (*((int *)stacks->a->top->data) != min)
 			ft_rra(stacks);
 }
 

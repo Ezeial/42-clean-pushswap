@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap_to_sorted_idx.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraldi <egiraldi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 18:22:21 by egiraldi          #+#    #+#             */
+/*   Updated: 2022/09/19 18:47:35 by egiraldi         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int ft_lstpush_int_back(t_list *lst, int value)
+static int	ft_lstpush_int_back(t_list *lst, int value)
 {
-	int 		*new_value;
+	int			*new_value;
 	t_list_elem	*new_elem;
 
 	new_value = malloc(sizeof(int));
@@ -28,11 +40,11 @@ static int ft_lstpush_int_back(t_list *lst, int value)
 **		-> The number of smaller number than [value] in the list
 */
 
-static size_t	ft_lstcount_smaller_than(t_list * lst, int value)
+static size_t	ft_lstcount_smaller_than(t_list *lst, int value)
 {
 	size_t		res;
 	t_list_elem	*current_el;
-	
+
 	res = 0;
 	if (lst)
 	{
@@ -71,7 +83,8 @@ t_list	*ft_lstmap_to_sorted_idx(t_list *lst)
 	current_el = lst->top;
 	while (current_el)
 	{
-		current_sorted_idx = ft_lstcount_smaller_than(lst, *((int *)current_el->data));
+		current_sorted_idx
+			= ft_lstcount_smaller_than(lst, *((int *)current_el->data));
 		if (ft_lstpush_int_back(mapped_lst, current_sorted_idx) < 0)
 		{
 			ft_lstclear(mapped_lst, free);
